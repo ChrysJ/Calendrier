@@ -1,0 +1,243 @@
+/* Reset */
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Font */
+
+@font-face {
+    font-family: orbitron;
+    src: url(./fonts/Orbitron-Bold.ttf);
+}
+
+@font-face {
+    font-family: murecho;
+    src: url(./fonts/Murecho-Medium.ttf);
+}
+
+/* Color */
+
+body {
+    height: 100vh;
+    /* overflow: hidden; */
+    background: url(./img/tecnology-bg.jpg) center / cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body:after {
+    content: '';
+    background-color: rgba(255, 0, 0, 0.2);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.bg-calendar {
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+    position: relative;
+}
+
+
+
+/* HEADER CALENDAR */
+
+.header-calendar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 2.5rem;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-family: orbitron, sans-serif;
+    font-size: 3.5rem;
+    color: #F3F3F3;
+}
+
+h2 {
+    font-family: orbitron, sans-serif;
+    text-transform: uppercase;
+    color: #F3F3F3;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+h1,
+h2 {
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.518);
+}
+
+/* SELECT DATE */
+
+.select-date {
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2D2C2C;
+    border: 2px solid #A3A3A3;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.487);
+    width: fit-content;
+}
+
+h3 {
+    font-family: orbitron, sans-serif;
+    text-transform: uppercase;
+    color: #F3F3F3;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+/* FORM SELECT DATE */
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+select,
+input {
+    padding: 10px;
+    border: 1px solid #F3F3F3;
+    border-radius: 5px;
+    background-color: #2D2C2C;
+    color: #F3F3F3;
+    font-family: murecho, sans-serif;
+    cursor: pointer;
+}
+
+select:hover,
+input:hover {
+    background-color: #1a1a1a;
+}
+
+select {
+    margin: 0 15px;
+}
+
+input {
+    margin-left: 15px;
+}
+
+/* CALENDAR */
+.calendar {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+
+.after,
+.before,
+.after #btn-after,
+.before #btn-before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.after #btn-after,
+.before #btn-before {
+    border: 1px solid #A3A3A3;
+    background-color: #2D2C2C;
+    width: 4rem;
+    height: 4rem;
+    width: clamp(2rem, 4rem, 4rem);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.after #btn-after i,
+.before #btn-before i {
+    font-size: 1.5rem;
+    color: #f3f3f3;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 3rem;
+}
+
+.day {
+    background-color: #F3F3F3;
+    font-family: murecho, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #A3A3A3;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5rem);
+}
+
+.box-day {
+    border: 1px solid #A3A3A3;
+    background-color: #2D2C2C;
+    color: #F3F3F3;
+    font-family: murecho, sans-serif;
+    display: flex;
+    align-items: center;
+    height: 4rem;
+}
+
+.box-day:nth-of-type(6),
+.box-day:nth-of-type(7),
+.box-day:nth-of-type(13),
+.box-day:nth-of-type(14),
+.box-day:nth-of-type(20),
+.box-day:nth-of-type(21),
+.box-day:nth-of-type(27),
+.box-day:nth-of-type(28),
+.box-day:nth-of-type(34),
+.box-day:nth-of-type(35),
+.box-day:nth-of-type(41),
+.box-day:nth-of-type(42) {
+    background-color: #454545;
+}
+
+.box-day-empty {
+    background-color: #1E2032 !important;
+}
+
+.box-day span {
+    padding: 10px;
+    border: 1px solid #A3A3A3;
+    margin-left: 15px;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.box-day-empty span {
+    opacity: 0.5;
+}
